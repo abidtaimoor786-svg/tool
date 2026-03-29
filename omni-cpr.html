@@ -1,0 +1,702 @@
+Here is an attractive, responsive homepage for your tools website, designed to showcase image and PDF tools with a modern UI and clear call-to-action sections.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>ToolForge | Ultimate Image & PDF Toolkit Suite</title>
+  <meta name="description" content="Professional online toolkit: compress, convert, edit images & PDFs. Free, fast, and secure. All-in-one productivity suite.">
+  <meta name="keywords" content="image tools, pdf tools, compress image, pdf converter, image editor, online toolkit">
+  <meta name="author" content="ToolForge">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.toolforge.com">
+  <meta property="og:title" content="ToolForge - Complete Image & PDF Toolkit">
+  <meta property="og:description" content="50+ tools to compress, convert, edit images and PDFs. Free online utilities.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630?text=ToolForge">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f5f7fc 0%, #eef2f8 100%);
+      color: #1e293b;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .logo i {
+      background: none;
+      color: #3b82f6;
+      font-size: 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #3b82f6;
+    }
+
+    .btn-outline {
+      border: 1px solid #cbd5e1;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      background: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      padding: 3rem 0 2rem;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .hero-badge {
+      background: #e0e7ff;
+      color: #4338ca;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #0f172a, #2d3a6e);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #475569;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .search-tools {
+      background: white;
+      border-radius: 60px;
+      padding: 0.3rem 0.3rem 0.3rem 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+      max-width: 450px;
+    }
+
+    .search-tools i {
+      color: #94a3b8;
+    }
+
+    .search-tools input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      padding: 0.7rem 0;
+    }
+
+    .search-tools button {
+      background: #3b82f6;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 40px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat span {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+    }
+
+    /* Category Tabs */
+    .category-tabs {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 3rem 0 2rem;
+    }
+
+    .tab-btn {
+      background: white;
+      border: 1px solid #e2e8f0;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .tab-btn.active {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+      box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+    }
+
+    /* Tools Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .tool-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.6rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid #eef2ff;
+      cursor: pointer;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+      border-color: #cbdffc;
+    }
+
+    .tool-icon {
+      width: 55px;
+      height: 55px;
+      background: linear-gradient(135deg, #eff6ff, #e0e7ff);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: #2563eb;
+      margin-bottom: 1.2rem;
+    }
+
+    .tool-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .tool-card p {
+      color: #5b6e8c;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+
+    .tool-tag {
+      display: inline-block;
+      background: #f1f5f9;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #3b82f6;
+    }
+
+    /* Featured Section */
+    .featured-section {
+      background: linear-gradient(120deg, #1e293b, #0f172a);
+      border-radius: 48px;
+      padding: 3rem 2rem;
+      margin: 3rem 0;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .featured-text h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .featured-text p {
+      opacity: 0.8;
+    }
+
+    .btn-white {
+      background: white;
+      color: #0f172a;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.2s;
+    }
+
+    /* Ad Space (Responsive) */
+    .ad-container {
+      background: rgba(255,255,240,0.6);
+      border-radius: 28px;
+      padding: 1rem;
+      text-align: center;
+      margin: 2rem 0;
+      border: 1px dashed #cbd5e1;
+    }
+
+    .ad-label {
+      font-size: 0.7rem;
+      color: #6c757d;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 4rem;
+      padding: 2rem 0;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 1rem;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #5b6e8c;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 780px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+      .hero-content h1 {
+        font-size: 2.3rem;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .hero {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fas fa-tools"></i>
+      <span>ToolForge</span>
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Image Tools</a>
+      <a href="#">PDF Tools</a>
+      <a href="#">Converter</a>
+      <a href="#" class="btn-outline"><i class="fas fa-star"></i> Pro</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-bolt"></i> 500K+ monthly users</div>
+      <h1>Your complete toolkit for images & PDFs</h1>
+      <p>Compress, convert, edit, merge, and optimize documents & media with 50+ free professional tools.</p>
+      <div class="search-tools">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search tool (e.g., compress image, pdf merge)" id="toolSearch">
+        <button id="searchBtn"><i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>50+</span><br>Power Tools</div>
+        <div class="stat"><span>2M+</span><br>Files Processed</div>
+        <div class="stat"><span>Free</span><br>No signup</div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://placehold.co/600x450/eef2ff/3b82f6?text=Tool+Showcase" alt="Tool showcase illustration">
+    </div>
+  </div>
+
+  <!-- Ad Space Top (Google AdSense Ready) -->
+  <div class="ad-container" id="topAdSpace">
+    <div class="ad-label">ADVERTISEMENT</div>
+    <div id="topAdSenseSlot" style="min-height: 90px; background: #f8fafc; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #64748b;">
+      <i class="fas fa-ad"></i> Ad Space — Configure AdSense (ID ready)
+    </div>
+  </div>
+
+  <!-- Category Filter Tabs -->
+  <div class="category-tabs">
+    <button class="tab-btn active" data-category="all">✨ All Tools</button>
+    <button class="tab-btn" data-category="image">🖼️ Image Tools</button>
+    <button class="tab-btn" data-category="pdf">📄 PDF Tools</button>
+    <button class="tab-btn" data-category="convert">🔄 Converters</button>
+    <button class="tab-btn" data-category="security">🔒 Security & Edit</button>
+  </div>
+
+  <!-- Tools Dynamic Grid -->
+  <div id="toolsGridContainer" class="tools-grid"></div>
+
+  <!-- Featured CTA Section -->
+  <div class="featured-section">
+    <div class="featured-text">
+      <h2><i class="fas fa-crown"></i> Need batch processing?</h2>
+      <p>Compress 100+ images or merge PDFs in one click. Upgrade to Pro for unlimited usage.</p>
+    </div>
+    <a href="#" class="btn-white">Explore Pro Features →</a>
+  </div>
+
+  <!-- Additional Ad Space (Sidebar style but inline) -->
+  <div class="ad-container" id="bottomAdSpace">
+    <div class="ad-label">SPONSORED</div>
+    <div id="bottomAdSenseSlot" style="min-height: 100px; background: #ffffff; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #64748b;">
+      <i class="fas fa-chart-line"></i> Google AdSense Integration Ready — Insert your ad unit ID
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-col">
+      <h4>ToolForge</h4>
+      <a href="#">About Us</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <div class="footer-col">
+      <h4>Image Tools</h4>
+      <a href="#">Compress Image</a>
+      <a href="#">Resize Image</a>
+      <a href="#">Convert to JPG/PNG/WebP</a>
+      <a href="#">Background Remover</a>
+    </div>
+    <div class="footer-col">
+      <h4>PDF Tools</h4>
+      <a href="#">Merge PDF</a>
+      <a href="#">Split PDF</a>
+      <a href="#">PDF to Word</a>
+      <a href="#">Compress PDF</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#">Help Center</a>
+      <a href="#">API Access</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+  <div style="text-align: center; padding: 1rem 0 2rem; font-size: 0.75rem; color: #6c757d;">
+    © 2025 ToolForge — Ultimate Image & PDF Toolkit. Free online tools.
+  </div>
+</div>
+
+<script>
+  // --------------------- TOOLS DATABASE (Image & PDF tools with categories) -----------------
+  const toolsDatabase = [
+    { id: 1, name: "Image Compressor", desc: "Reduce image size up to 80% while preserving quality", icon: "fas fa-compress-alt", category: "image", tag: "popular", link: "#" },
+    { id: 2, name: "Resize Image", desc: "Scale images to exact dimensions for social media & web", icon: "fas fa-expand-alt", category: "image", tag: "free", link: "#" },
+    { id: 3, name: "JPG to PNG Converter", desc: "Convert JPEG images to high-quality PNG format", icon: "fas fa-exchange-alt", category: "convert", tag: "fast", link: "#" },
+    { id: 4, name: "PNG to JPG", desc: "Convert PNG to compressed JPG with background fill", icon: "fas fa-file-image", category: "convert", tag: "lossy", link: "#" },
+    { id: 5, name: "WebP Optimizer", desc: "Convert any image to next-gen WebP format", icon: "fab fa-chrome", category: "image", tag: "modern", link: "#" },
+    { id: 6, name: "Background Remover", desc: "AI-powered remove background from images instantly", icon: "fas fa-magic", category: "image", tag: "AI", link: "#" },
+    { id: 7, name: "PDF Merger", desc: "Combine multiple PDFs into one document", icon: "fas fa-object-group", category: "pdf", tag: "essential", link: "#" },
+    { id: 8, name: "Split PDF", desc: "Extract pages from PDF into separate files", icon: "fas fa-cut", category: "pdf", tag: "organize", link: "#" },
+    { id: 9, name: "PDF to Word", desc: "Convert PDF to editable Word document", icon: "fas fa-file-word", category: "convert", tag: "office", link: "#" },
+    { id: 10, name: "Compress PDF", desc: "Reduce PDF file size while retaining quality", icon: "fas fa-file-pdf", category: "pdf", tag: "size", link: "#" },
+    { id: 11, name: "Image to PDF", desc: "Convert JPG/PNG images into a single PDF", icon: "fas fa-camera", category: "convert", tag: "archive", link: "#" },
+    { id: 12, name: "Rotate Image", desc: "Rotate or flip images 90°/180° easily", icon: "fas fa-undo-alt", category: "image", tag: "edit", link: "#" },
+    { id: 13, name: "PDF Encrypt", desc: "Add password protection to your PDF files", icon: "fas fa-lock", category: "security", tag: "secure", link: "#" },
+    { id: 14, name: "PDF Unlock", desc: "Remove password from PDF (if you have permission)", icon: "fas fa-unlock-alt", category: "security", tag: "utility", link: "#" },
+    { id: 15, name: "Add Watermark", desc: "Protect images with text or logo watermark", icon: "fas fa-water", category: "image", tag: "brand", link: "#" },
+    { id: 16, name: "HEIC to JPG", desc: "Convert iPhone HEIC images to JPG format", icon: "fab fa-apple", category: "convert", tag: "apple", link: "#" }
+  ];
+
+  // Render tools based on category filter
+  function renderTools(category = "all") {
+    const container = document.getElementById("toolsGridContainer");
+    let filtered = toolsDatabase;
+    if (category !== "all") {
+      filtered = toolsDatabase.filter(tool => tool.category === category);
+    }
+    if (filtered.length === 0) {
+      container.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:3rem;">✨ No tools found in this category. Try another tab!</div>`;
+      return;
+    }
+    let html = "";
+    filtered.forEach(tool => {
+      html += `
+        <div class="tool-card" data-tool-id="${tool.id}">
+          <div class="tool-icon"><i class="${tool.icon}"></i></div>
+          <h3>${tool.name}</h3>
+          <p>${tool.desc}</p>
+          <span class="tool-tag"><i class="fas fa-tag"></i> ${tool.tag}</span>
+          <div style="margin-top: 12px;"><a href="${tool.link}" style="font-size:0.8rem; font-weight:600; color:#3b82f6; text-decoration:none;">Try now →</a></div>
+        </div>
+      `;
+    });
+    container.innerHTML = html;
+    attachToolCardEvents();
+  }
+
+  function attachToolCardEvents() {
+    document.querySelectorAll('.tool-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        // If user clicks on inner link we don't want double navigation, but it's fine
+        if(e.target.tagName !== 'A') {
+          const toolName = card.querySelector('h3')?.innerText || 'tool';
+          alert(`✨ "${toolName}" will open soon! Full functionality coming. (Demo interaction)`);
+        }
+      });
+    });
+  }
+
+  // Tab switching
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const category = btn.getAttribute('data-category');
+      renderTools(category);
+    });
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById('toolSearch');
+  const searchButton = document.getElementById('searchBtn');
+  function performSearch() {
+    const query = searchInput.value.trim().toLowerCase();
+    if (query === "") {
+      renderTools("all");
+      // also reset active tab to All Tools
+      tabBtns.forEach(btn => btn.classList.remove('active'));
+      document.querySelector('.tab-btn[data-category="all"]').classList.add('active');
+      return;
+    }
+    const filtered = toolsDatabase.filter(tool => tool.name.toLowerCase().includes(query) || tool.desc.toLowerCase().includes(query));
+    const container = document.getElementById("toolsGridContainer");
+    if (filtered.length === 0) {
+      container.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:3rem;">🔍 No tools matching "${query}". Try another keyword.</div>`;
+    } else {
+      let html = "";
+      filtered.forEach(tool => {
+        html += `
+          <div class="tool-card">
+            <div class="tool-icon"><i class="${tool.icon}"></i></div>
+            <h3>${tool.name}</h3>
+            <p>${tool.desc}</p>
+            <span class="tool-tag">${tool.tag}</span>
+            <div style="margin-top:12px;"><a href="#" style="font-size:0.8rem; font-weight:600; color:#3b82f6;">Open →</a></div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+      attachToolCardEvents();
+    }
+    // remove active tab style during search
+    tabBtns.forEach(btn => btn.classList.remove('active'));
+  }
+  searchButton.addEventListener('click', performSearch);
+  searchInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') performSearch(); });
+
+  // ---------- GOOGLE ADSENSE INTEGRATION (Easy Insertion Placeholders) ----------
+  // This demo allows insertion of AdSense ad unit IDs dynamically for monetization.
+  // Since actual Adsense requires live domain & scripts, we create a config panel that admin can use.
+  // For full homepage, we show designated spaces with data-ad attributes ready.
+  
+  // Create a small configuration panel that allows inserting AdSense publisher & ad slots (floating/mini)
+  // But to keep UI clean, we'll add an inline expandable section in the footer or ad area.
+  const adConfigDiv = document.createElement('div');
+  adConfigDiv.style.background = '#f1f5f9';
+  adConfigDiv.style.borderRadius = '24px';
+  adConfigDiv.style.padding = '1rem';
+  adConfigDiv.style.margin = '1rem 0';
+  adConfigDiv.style.fontSize = '0.8rem';
+  adConfigDiv.innerHTML = `
+    <details style="cursor:pointer;">
+      <summary style="font-weight:600; color:#334155;"><i class="fas fa-code"></i> Monetization: Insert Google AdSense IDs (Ad Unit Configuration)</summary>
+      <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:12px; align-items:flex-end;">
+        <div style="flex:1;"><label>Publisher ID (ca-pub-...):</label><input type="text" id="pubIdInput" placeholder="ca-pub-xxxxxxxx" style="width:100%; padding:8px; border-radius:30px; border:1px solid #cbd5e1;"></div>
+        <div style="flex:1;"><label>Top Ad Slot ID:</label><input type="text" id="topSlotInput" placeholder="data-ad-slot top" style="width:100%; padding:8px; border-radius:30px;"></div>
+        <div style="flex:1;"><label>Bottom Ad Slot ID:</label><input type="text" id="bottomSlotInput" placeholder="data-ad-slot bottom" style="width:100%; padding:8px; border-radius:30px;"></div>
+        <button id="applyAdsenseHomepage" style="background:#3b82f6; border:none; padding:8px 18px; border-radius:40px; color:white; font-weight:600;">Apply Ads</button>
+      </div>
+      <p class="ad-label" style="margin-top:12px;">*After inserting valid IDs, refresh or apply to load AdSense scripts. Ensure domain is approved.</p>
+    </details>
+  `;
+  const containerDiv = document.querySelector('.container');
+  const footerElement = document.querySelector('.footer');
+  if (footerElement) {
+    containerDiv.insertBefore(adConfigDiv, footerElement);
+  } else {
+    containerDiv.appendChild(adConfigDiv);
+  }
+
+  // Function to dynamically inject Adsense ads into slots
+  function loadAdsenseAds(publisherId, topSlot, bottomSlot) {
+    if (!publisherId || !topSlot || !bottomSlot) {
+      alert("Please fill Publisher ID and both Ad Slot IDs.");
+      return false;
+    }
+    // Remove existing ins elements if any
+    const topSlotDiv = document.getElementById('topAdSenseSlot');
+    const bottomSlotDiv = document.getElementById('bottomAdSenseSlot');
+    if (!topSlotDiv || !bottomSlotDiv) return false;
+    // clear previous ads inside containers
+    topSlotDiv.innerHTML = '';
+    bottomSlotDiv.innerHTML = '';
+    // create ins elements
+    const topIns = document.createElement('ins');
+    topIns.className = 'adsbygoogle';
+    topIns.style.display = 'block';
+    topIns.style.width = '100%';
+    topIns.style.minHeight = '90px';
+    topIns.setAttribute('data-ad-client', publisherId.trim());
+    topIns.setAttribute('data-ad-slot', topSlot.trim());
+    topIns.setAttribute('data-ad-format', 'auto');
+    topIns.setAttribute('data-full-width-responsive', 'true');
+    topSlotDiv.appendChild(topIns);
+    
+    const bottomIns = document.createElement('ins');
+    bottomIns.className = 'adsbygoogle';
+    bottomIns.style.display = 'block';
+    bottomIns.style.width = '100%';
+    bottomIns.style.minHeight = '100px';
+    bottomIns.setAttribute('data-ad-client', publisherId.trim());
+    bottomIns.setAttribute('data-ad-slot', bottomSlot.trim());
+    bottomIns.setAttribute('data-ad-format', 'auto');
+    bottomIns.setAttribute('data-full-width-responsive', 'true');
+    bottomSlotDiv.appendChild(bottomIns);
+    
+    // Load AdSense script if not present
+    if (!document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      script.onload = () => { if(window.adsbygoogle) { window.adsbygoogle.push({}); window.adsbygoogle.push({}); } };
+      document.head.appendChild(script);
+    } else {
+      if(window.adsbygoogle) {
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+      }
+    }
+    return true;
+  }
+  
+  document.getElementById('applyAdsenseHomepage').addEventListener('click', () => {
+    const pubId = document.getElementById('pubIdInput').value.trim();
+    const topSlotId = document.getElementById('topSlotInput').value.trim();
+    const bottomSlotId = document.getElementById('bottomSlotInput').value.trim();
+    if(!pubId || !topSlotId || !bottomSlotId) {
+      alert("Please fill all AdSense fields to display ads.");
+      return;
+    }
+    loadAdsenseAds(pubId, topSlotId, bottomSlotId);
+  });
+  
+  // initial render all tools
+  renderTools("all");
+  
+  // additional tooltip / interactive
+  console.log("ToolForge homepage loaded with 16+ tools, responsive design & AdSense ready slots.");
+</script>
+</body>
+</html>
+```
